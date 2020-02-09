@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+        // 支持 import .json 文件
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        // 用实验性的装饰器特性
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "target": "es5",
+        "lib": ["dom", "es7"],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./packages/*"]
+        },
+        "skipLibCheck": true,
+        "module": "ESNext",
+        "moduleResolution": "node",
+        "noResolve": false,
+        "noImplicitAny": false,
+        "removeComments": true,
+        "sourceMap": true,
+        "allowJs": false,
+        "declaration": true,
+        // 编译后的 types 目录
+        "declarationDir": "./dist/typings",
+        // 自定义的 types 目录
+        "typeRoots": ["./node_modules/@types"]
+    },
+    "skipLibCheck": true,
+    "exclude": [
+        "node_modules",
+        "scripts",
+        "acceptance-tests",
+        "jest",
+        "tslint:latest",
+        "tslint-config-prettier"
+    ]
+}
