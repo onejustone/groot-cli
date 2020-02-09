@@ -4,3 +4,5 @@ npm-debug.*
 dist/
 package-lock.json
 .idea/
+lerna-debug.log
+yarn-error.log
