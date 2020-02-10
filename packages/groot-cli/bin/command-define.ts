@@ -12,5 +12,6 @@ export enum CreateOptions {
     git = "git",
     force = "force",
     preset = "preset",
-    default = "default"
+    default = "default",
+    cwd = "cwd"
 }
