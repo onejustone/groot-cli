@@ -10,9 +10,6 @@ module.exports = {
         ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
         sourceType: 'module' // Allows for the use of imports
     },
-    ecmaFeatures: {
-        jsx: true // Allows for the parsing of JSX
-    },
     rules: {
         'prettier/prettier': 'error',
         'no-unused-vars': 'warn',
@@ -21,7 +18,7 @@ module.exports = {
         'react/no-find-dom-node': 0,
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/interface-name-prefix': 0,
-        quotes: ['error', 'single'],
+        // quotes: ['error', 'single'],
         // 'no-console': 'warn',
         // 'no-debugger': 'error',
         'no-alert': 'error',

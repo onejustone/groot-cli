@@ -2,9 +2,10 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "dev": "ts-node -r tsconfig-paths/register ./packages/groot-cli/bin/main.ts",
     "prettier": "prettier --write \"./packages/**/*.{ts,tsx,json}\"",
-    "lint-fix": "eslint --fix .tsx,ts packages/",
-    "lint-without-fix": "eslint .tsx,ts packages/"
+    "lint": "eslint --fix ./packages/**/*.ts ./packages/**/bin/*",
+    "lint-without-fix": "eslint --ext .ts ./packages/**/.ts ./packages/**/bin/*"
   },
   "workspaces": [
     "packages/*"
@@ -21,6 +22,7 @@
     ]
   },
   "devDependencies": {
+    "@types/commander": "^2.12.2",
     "@types/node": "^13.7.0",
     "@typescript-eslint/eslint-plugin": "^2.19.0",
     "@typescript-eslint/parser": "^2.19.0",
@@ -29,6 +31,8 @@
     "eslint-plugin-prettier": "^3.1.2",
     "lint-staged": "^10.0.7",
     "prettier": "^1.19.1",
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.5",
     "yorkie": "^2.0.0"
   }

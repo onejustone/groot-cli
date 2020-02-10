@@ -7,13 +7,13 @@
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "target": "es5",
-        "lib": ["dom", "es7"],
+        // https://github.com/TypeStrong/ts-node#syntaxerror
+        "module": "commonjs",
         "baseUrl": ".",
         "paths": {
             "@/*": ["./packages/*"]
         },
         "skipLibCheck": true,
-        "module": "ESNext",
         "moduleResolution": "node",
         "noResolve": false,
         "noImplicitAny": false,
