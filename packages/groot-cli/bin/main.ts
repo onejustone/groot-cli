@@ -6,7 +6,7 @@ import chalk from "chalk";
 import semver from "semver";
 import pkg from "../package.json";
 
-import { CommandCollections, CreateOptions, CreateOption } from "./command-define";
+import { CommandEnum, CreateOptionEnum, CreateOption, createOptions } from "./command-define";
 import create from "../lib/create";
 
 import pickCommandOptions from "@/groot-cli-utils/pick-command-options";
@@ -46,16 +46,17 @@ if (slash(process.cwd()).indexOf("/packages/test") > 0) {
 
 program.version(`groot-cli ${pkg.version}`).usage("<commad> [options]");
 
+/** command::create */
 program
-    .command(`${CommandCollections.create} <projectName>`)
+    .command(`${CommandEnum.create} <projectName>`)
     .description("use groot-cli create a new project.")
-    .option(`-p --${CreateOptions.preset} <presetName>`, "use preset")
-    .option(`-g --${CreateOptions.git}`, "")
-    .option(`-f --${CreateOptions.force}`, "Overwrite target directory if it exists")
-    .option(`-d --${CreateOptions.default}`, "Skip prompts and use default preset")
+    .option(`-${createOptions.preset.short} --${createOptions.preset.long}`, createOptions.preset.description)
+    .option(`-${createOptions.git.short} --${createOptions.git.long}`, createOptions.git.description)
+    .option(`-${createOptions.force.short} --${createOptions.force.long}`, createOptions.force.description)
+    .option(`-${createOptions.default.short} --${createOptions.default.long}`, createOptions.default.description)
+    .option(`-${createOptions.preset.short} --${createOptions.preset.long}`, createOptions.preset.description)
     .action((projectName: string, cmd: Command) => {
         const args = pickCommandOptions<CreateOption>(cmd);
-
         if (minimist(process.argv.slice(3))._.length > 1) {
             console.log(
                 `${console.log(
